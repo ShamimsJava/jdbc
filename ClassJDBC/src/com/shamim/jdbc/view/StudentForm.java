@@ -172,7 +172,7 @@ public class StudentForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(440, 467));
+        setSize(new java.awt.Dimension(403, 467));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

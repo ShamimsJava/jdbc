@@ -12,7 +12,7 @@ import java.util.List;
 
 public class StudentService implements StudentDao{
 
-    Connection conn = DbConnection.getConnections("xe", "hr", "hr");
+    Connection conn = DbConnection.getConnections("orcl", "hr", "hr");
     
     @Override
     public void save(Student s) {

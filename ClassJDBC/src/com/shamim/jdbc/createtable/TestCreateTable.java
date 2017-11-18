@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class TestCreateTable {
-    static Connection conn = DbConnection.getConnections("xe", "hr", "hr");
+    static Connection conn = DbConnection.getConnections("orcl", "hr", "hr");
     public static void main(String[] args) {
         String sql = "create table studentbd("
                 + "id integer primary key,"

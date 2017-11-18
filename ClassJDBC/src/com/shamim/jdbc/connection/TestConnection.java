@@ -4,6 +4,6 @@ import java.sql.Connection;
 
 public class TestConnection {
     public static void main(String[] args) {
-        Connection conn = DbConnection.getConnections("xe", "hr", "hr");
+        Connection conn = DbConnection.getConnections("orcl", "hr", "hr");
     }
 }
