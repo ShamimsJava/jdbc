@@ -1,9 +1,11 @@
 package com.shamim.jdbc.service;
 
 import com.shamim.jdbc.connection.DbConnection;
+import com.shamim.jdbc.connection.MysqlConnection;
 import com.shamim.jdbc.dao.StudentDao;
 import com.shamim.jdbc.domain.Student;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,13 +14,13 @@ import java.util.List;
 
 public class StudentService implements StudentDao{
 
-    Connection conn = DbConnection.getConnections("xe", "hr", "hr");
-    
+    //Connection conn = DbConnection.getConnections("xe", "hr", "hr");
+    Connection conn = MysqlConnection.getConnections("root", "root"); 
     @Override
     public void save(Student s) {
         try {
             if(s.getStudentName() != null){
-                PreparedStatement stmt = conn.prepareStatement("insert into studentbd(id, student_name) values(?,?)");
+                PreparedStatement stmt = conn.prepareStatement("insert into students(student_id, student_name) values(?,?)");
                 stmt.setInt(1, s.getId());
                 stmt.setString(2, s.getStudentName());
                 
