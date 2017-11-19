@@ -7,9 +7,9 @@ import java.sql.PreparedStatement;
 public class TableCreate {
     public static void main(String[] args) {
         try {
-            Connection conn = DbConnection.getConnections("sus", "sus");
-            String sql = "create table students("
-                    + "st_id number(5) primary key,"
+            Connection conn = DbConnection.getConnections("root", "root");
+            String sql = "create table students2("
+                    + "st_id integer(5) primary key,"
                     + "st_name varchar(15) not null)";
             PreparedStatement st = conn.prepareStatement(sql);
             st.executeUpdate();
