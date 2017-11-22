@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 
 public class DbConnection {
 
-    private static String driver = "oracle.jdbc.driver.OracleDriver";
-    private static String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+    private static String driver = "com.mysql.jdbc.Driver";
+    private static String url = "jdbc:mysql://localhost:3306/test";
     private static Connection connection;
 
     public static Connection getConnections(String user, String password) {
@@ -20,12 +20,18 @@ public class DbConnection {
     }
 
     public static void main(String[] args) {
-        Connection conn = DbConnection.getConnections("sus", "sus");
+        Connection conn = DbConnection.getConnections("root", "root");
         System.out.println(":::::Connected:::::");
     }
 }
 
 /*
+User creation:
+--------------
+create user sus identified by sus;
+grant dba to sus;
+conn sus/sus;
+
 For Oracle Database Enterprise Edition:
 ---------------------------------------
 private static String driver = "oracle.jdbc.driver.OracleDriver";

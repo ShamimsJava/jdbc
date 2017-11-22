@@ -11,7 +11,7 @@ import java.util.List;
 
 public class StudentService {
 
-    Connection conn = DbConnection.getConnections("sus", "sus");
+    Connection conn = DbConnection.getConnections("root", "root");
 
     public void insert(Students s) {
         try {
